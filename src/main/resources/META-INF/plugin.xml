@@ -1,0 +1,49 @@
+<idea-plugin>
+  <id>teamcypher.cypherprogress</id>
+  <name>Cypher Progress Bar</name>
+  <version>1.0</version>
+  <idea-version since-build="222"/>
+  <vendor>Domingo Pérez</vendor>
+
+  <description>
+    <![CDATA[
+      This plugin replaces the standard IntelliJ progress bar with animated Cypher from matrix.
+      and Soon more characters...
+      <br>
+      <img src="https://github.com/p4pupro/CypherProgressBar/raw/master/raw/neo.gif" title="Neo" />
+      <br>
+      <img src="https://github.com/p4pupro/CypherProgressBar/raw/master/raw/morpheus.gif" title="Morpheus" />
+      <br>
+      <img src="https://github.com/p4pupro/CypherProgressBar/raw/master/raw/trinity.gif" title="Trinity" />
+      <br>
+    ]]>
+  </description>
+
+  <change-notes>
+    <![CDATA[
+      <em>1.0 Initial release</em><br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <applicationService serviceImplementation="teamcypher.cypherprogress.configuration.CypherProgressState"/>
+    <applicationConfigurable instance="teamcypher.cypherprogress.configuration.CypherProgressConfigurable"
+                             id="teamcypher.cypherprogress.configuration.CypherProgressConfigurable"
+                             displayName="Cypher Progress Bar"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+  <applicationListeners>
+    <listener class="teamcypher.cypherprogress.ProgressBarLafManagerListener"
+              topic="com.intellij.ide.ui.LafManagerListener" />
+    <listener class="teamcypher.cypherprogress.ImagePreloader" topic="com.intellij.ide.AppLifecycleListener" />
+  </applicationListeners>
+</idea-plugin>
