@@ -23,8 +23,10 @@ public class CypherProgressConfigurable implements Configurable {
     @Override
     public JComponent createComponent() {
         settingsComponent = new CypherProgressSettingsComponent();
+        reset();
         return settingsComponent.getPanel();
     }
+
 
     @Override
     public boolean isModified() {
@@ -32,7 +34,9 @@ public class CypherProgressConfigurable implements Configurable {
         boolean modified = settingsComponent.getProgressColor() != settings.progressColor
                 | settingsComponent.getBackColor() != settings.backColor
                 | settingsComponent.getTintColor() != settings.tintColor
-                | settingsComponent.getCustomBackEnabled() != settings.useCustomBackColor;
+                | settingsComponent.getCustomBackEnabled() != settings.useCustomBackColor
+                | settingsComponent.getSelectedImageIndex() != settings.getSelectedImageIndex();
+
         if (modified) {
             CypherProgressState s = new CypherProgressState();
             s.progressColor = settingsComponent.getProgressColor();
@@ -51,8 +55,10 @@ public class CypherProgressConfigurable implements Configurable {
         settings.backColor = settingsComponent.getBackColor();
         settings.tintColor = settingsComponent.getTintColor();
         settings.useCustomBackColor = settingsComponent.getCustomBackEnabled();
+        settings.selectedImageIndex = settingsComponent.getSelectedImageIndex();
         settingsComponent.updateMatrixProgressBars();
     }
+
 
     @Override
     public void reset() {
@@ -61,7 +67,9 @@ public class CypherProgressConfigurable implements Configurable {
         settingsComponent.setBackColor(settings.backColor);
         settingsComponent.setTintColor(settings.tintColor);
         settingsComponent.setCheckboxCustomBack(settings.useCustomBackColor);
+        settingsComponent.setSelectedImageIndex(settings.getSelectedImageIndex());
     }
+
 
     @Override
     public void disposeUIResources() {

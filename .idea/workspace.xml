@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11e6b4e9-1369-4999-9453-bb8e112d110a" name="Changes" comment="" />
+    <list default="true" id="11e6b4e9-1369-4999-9453-bb8e112d110a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/morpheus.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/neo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/trinity.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/ImagePreloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/ImagePreloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/MatrixProgressBarUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/MatrixProgressBarUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressConfigurable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressConfigurable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressSettingsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressSettingsComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressState.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,32 +72,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/papue/Downloads/CypherProgressBar-1.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/papue/Downloads/CypherProgressBar-1.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\papue\Documents\petprojects\CypherProgressBar\src\main\resources" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.IntelliJ-CypherProgressBar [clean build]">
+  <component name="RunManager" selected="Gradle.CypherProgressBar [clean build]">
+    <configuration name="CypherProgressBar [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="CypherProgressBar" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -171,6 +209,7 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.CypherProgressBar" />
+      <item itemvalue="Gradle.CypherProgressBar [clean build]" />
       <item itemvalue="Gradle.IntelliJ-CypherProgressBar [clean build]" />
       <item itemvalue="Gradle.IntelliJ-DragonProgressBar [clean build]" />
     </list>
@@ -178,6 +217,7 @@
       <list>
         <item itemvalue="Gradle.IntelliJ-DragonProgressBar [clean build]" />
         <item itemvalue="Gradle.IntelliJ-CypherProgressBar [clean build]" />
+        <item itemvalue="Gradle.CypherProgressBar [clean build]" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +233,10 @@
       <workItem from="1698614570111" duration="5997000" />
       <workItem from="1698620890310" duration="638000" />
       <workItem from="1698621545143" duration="171000" />
-      <workItem from="1698621729802" duration="2998000" />
+      <workItem from="1698621729802" duration="3204000" />
+      <workItem from="1698625165434" duration="406000" />
+      <workItem from="1698625589098" duration="3797000" />
+      <workItem from="1698629428951" duration="273000" />
     </task>
     <servers />
   </component>

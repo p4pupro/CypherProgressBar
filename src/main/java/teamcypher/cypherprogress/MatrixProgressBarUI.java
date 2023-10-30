@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.Random;
 
 public class MatrixProgressBarUI extends BasicProgressBarUI {
-    private final TintableImageIcon cypherIcon;
+    private TintableImageIcon matrixIcon;
     private MatrixColumn[] matrixColumns;
 
     private boolean lastDirFlipped = false;
@@ -22,7 +22,7 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
 
     // also used for previewing settings without modifying the state instance
     public MatrixProgressBarUI(CypherProgressState settings) {
-        cypherIcon = new TintableImageIcon(ImagePreloader.getImage(), settings.tintColor);
+        updateIconAndSettings(settings);
         initMatrixEffect(32, 32);
     }
 
@@ -31,9 +31,13 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
         return new MatrixProgressBarUI();
     }
 
+    public void updateIconAndSettings(CypherProgressState settings) {
+        this.matrixIcon = new TintableImageIcon(settings.getSelectedImage(), settings.tintColor);
+    }
+
     @Override
     public Dimension getPreferredSize(JComponent c) {
-        return new Dimension(super.getPreferredSize(c).width, JBUI.scale(cypherIcon.getIconHeight()));
+        return new Dimension(super.getPreferredSize(c).width, JBUI.scale(matrixIcon.getIconHeight()));
     }
 
     @Override
@@ -54,7 +58,7 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
             if (lastX != this.boxRect.x)
                 lastDirFlipped = (this.boxRect.x - lastX < 0);
 
-            cypherIcon.paintIcon(c, g2, this.boxRect.x, b.top, lastDirFlipped);
+            matrixIcon.paintIcon(c, g2, this.boxRect.x, b.top, lastDirFlipped);
 
             lastX = this.boxRect.x;
         }
@@ -79,13 +83,13 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
         int amountFull = this.getAmountFull(b, barRectWidth, barRectHeight);
 
         // Clamp cypher so it never clips
-        int cypherPosition = amountFull - cypherIcon.getIconWidth() / 2;
-        if (cypherPosition + cypherIcon.getIconWidth() > barRectWidth) {
-            cypherPosition = barRectWidth - cypherIcon.getIconWidth();
+        int cypherPosition = amountFull - matrixIcon.getIconWidth() / 2;
+        if (cypherPosition + matrixIcon.getIconWidth() > barRectWidth) {
+            cypherPosition = barRectWidth - matrixIcon.getIconWidth();
         }
 
         // Paint the cypher icon
-        cypherIcon.paintIcon(c, g2, b.left + cypherPosition, b.top);
+        matrixIcon.paintIcon(c, g2, b.left + cypherPosition, b.top);
 
         if (this.progressBar.isStringPainted()) {
             this.paintString(g2, b.left, b.top, barRectWidth, barRectHeight, barRectHeight, b);
@@ -164,6 +168,6 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
 
     @Override
     protected int getBoxLength(int availableLength, int otherDimension) {
-        return cypherIcon.getIconWidth();
+        return matrixIcon.getIconWidth();
     }
 }
