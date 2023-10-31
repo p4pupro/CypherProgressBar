@@ -23,7 +23,7 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
     // also used for previewing settings without modifying the state instance
     public MatrixProgressBarUI(CypherProgressState settings) {
         updateIconAndSettings(settings);
-        initMatrixEffect(32, 32);
+        initMatrixEffect(200, 32);
     }
 
     @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
@@ -45,56 +45,64 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
         if (!(g2d instanceof Graphics2D)) return;
         Graphics2D g2 = (Graphics2D) g2d;
 
-
         Insets b = this.progressBar.getInsets();
         int barRectWidth = this.progressBar.getWidth() - (b.right + b.left);
         int barRectHeight = this.progressBar.getHeight() - (b.top + b.bottom);
 
-        paintMatrixEffect(g2, barRectWidth, barRectHeight);
-
+        // Actualizar el rectángulo de la animación
         this.boxRect = this.getBox(this.boxRect);
         if (this.boxRect != null) {
 
+            // Comprueba si la dirección cambió
             if (lastX != this.boxRect.x)
                 lastDirFlipped = (this.boxRect.x - lastX < 0);
 
+            // Pintar el ícono cypher
             matrixIcon.paintIcon(c, g2, this.boxRect.x, b.top, lastDirFlipped);
+
+            // Prepara la posición de inicio para el efecto Matrix
+            int matrixStartX = this.boxRect.x + matrixIcon.getIconWidth();
+            paintMatrixEffect(g2, barRectWidth, barRectHeight, matrixStartX);
 
             lastX = this.boxRect.x;
         }
 
+        // Pintar la cadena de texto, si es necesario
         if (this.progressBar.isStringPainted()) {
             this.paintString(g2, b.left, b.top, barRectWidth, barRectHeight, barRectHeight, b);
         }
     }
+
 
     @Override
     protected void paintDeterminate(Graphics g, JComponent c) {
         if (!(g instanceof Graphics2D)) return;
         Graphics2D g2 = (Graphics2D) g;
 
-
         Insets b = this.progressBar.getInsets();
         int barRectWidth = this.progressBar.getWidth() - (b.right + b.left);
         int barRectHeight = this.progressBar.getHeight() - (b.top + b.bottom);
 
-        paintMatrixEffect((Graphics2D) g, barRectWidth, barRectHeight);
-
         int amountFull = this.getAmountFull(b, barRectWidth, barRectHeight);
 
-        // Clamp cypher so it never clips
-        int cypherPosition = amountFull - matrixIcon.getIconWidth() / 2;
-        if (cypherPosition + matrixIcon.getIconWidth() > barRectWidth) {
-            cypherPosition = barRectWidth - matrixIcon.getIconWidth();
-        }
+        // Calcula la posición del ícono cypher, asegurándose de que no se recorte
+        int cypherPosition = Math.min(amountFull - matrixIcon.getIconWidth() / 2, barRectWidth - matrixIcon.getIconWidth());
 
-        // Paint the cypher icon
+        // Calcula el inicio del efecto Matrix para que aparezca a la derecha del ícono cypher
+        int matrixStartX = b.left + cypherPosition + matrixIcon.getIconWidth();
+
+        // Pinta el efecto Matrix
+        paintMatrixEffect(g2, barRectWidth, barRectHeight, matrixStartX);
+
+        // Pinta el ícono cypher
         matrixIcon.paintIcon(c, g2, b.left + cypherPosition, b.top);
 
+        // Pinta la cadena de texto, si es necesario
         if (this.progressBar.isStringPainted()) {
             this.paintString(g2, b.left, b.top, barRectWidth, barRectHeight, barRectHeight, b);
         }
     }
+
 
     private static final int COLUMN_WIDTH = 15; // Ancho de las columnas, ajusta según sea necesario
     private static final int CHAR_HEIGHT = 7; // Altura aproximada de cada carácter
@@ -107,6 +115,13 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
         int startY; // Posición inicial en Y para el efecto de desplazamiento continuo
         int offset; // Desplazamiento actual desde startY
         char[] chars;
+
+
+        // Método para actualizar la posición X de la columna
+        void updateX(int baseX) {
+            this.x = baseX + this.x;
+        }
+
 
         MatrixColumn(int x, int h, Random random) {
             this.speed = 1 + random.nextInt(3);
@@ -155,13 +170,15 @@ public class MatrixProgressBarUI extends BasicProgressBarUI {
 
     private static final String MATRIX_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+=-[]{}|;:<>,.?/漢字";
 
-    private static final Color MATRIX_COLOR = new Color(0, 255, 0); // Color verde característico
-    private void paintMatrixEffect(Graphics2D g2, int h, int w) {
-        g2.setFont(new Font("Monospaced", Font.BOLD, JBUI.scale(12))); // Fuente monoespaciada
-        g2.setColor(MATRIX_COLOR);
+    private static final Color MATRIX_COLOR = new Color(0, 255, 0);
 
+    private void paintMatrixEffect(Graphics2D g2, int w, int h, int matrixStartX) {
+        g2.setFont(new Font("Monospaced", Font.BOLD, JBUI.scale(12)));
+        g2.setColor(MATRIX_COLOR);
         for (MatrixColumn column : matrixColumns) {
+            column.updateX(matrixStartX + column.x);
             column.draw(g2, h, w);
+            column.updateX(-matrixStartX);
         }
     }
 

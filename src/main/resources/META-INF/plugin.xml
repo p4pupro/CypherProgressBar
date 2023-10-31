@@ -1,14 +1,15 @@
 <idea-plugin>
   <id>teamcypher.cypherprogress</id>
-  <name>Cypher Progress Bar</name>
+  <name>Matrix Progress Bar</name>
   <version>1.0</version>
   <idea-version since-build="222"/>
-  <vendor>Domingo Pérez</vendor>
+  <vendor>Domingo Pérez and Victoria Mendoza</vendor>
 
   <description>
     <![CDATA[
-      This plugin replaces the standard IntelliJ progress bar with animated Cypher from matrix.
-      and Soon more characters...
+      This plugin replaces the standard IntelliJ progress bar with animated Characters from matrix.
+      <br>
+      <img src="https://github.com/p4pupro/CypherProgressBar/raw/master/raw/cypher.gif" title="Cypher" />
       <br>
       <img src="https://github.com/p4pupro/CypherProgressBar/raw/master/raw/neo.gif" title="Neo" />
       <br>
@@ -34,7 +35,7 @@
     <applicationService serviceImplementation="teamcypher.cypherprogress.configuration.CypherProgressState"/>
     <applicationConfigurable instance="teamcypher.cypherprogress.configuration.CypherProgressConfigurable"
                              id="teamcypher.cypherprogress.configuration.CypherProgressConfigurable"
-                             displayName="Cypher Progress Bar"/>
+                             displayName="Matrix Progress Bar"/>
   </extensions>
 
   <actions>

@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11e6b4e9-1369-4999-9453-bb8e112d110a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/morpheus.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/neo.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/trinity.gif" afterDir="false" />
+    <list default="true" id="11e6b4e9-1369-4999-9453-bb8e112d110a" name="Changes" comment="add new feat to get more characters">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon-cypher.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/ImagePreloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/ImagePreloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/MatrixProgressBarUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/MatrixProgressBarUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressConfigurable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressConfigurable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressSettingsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressSettingsComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teamcypher/cypherprogress/configuration/CypherProgressState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +49,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -78,8 +80,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/papue/Downloads/CypherProgressBar-1.0.jar&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/new__characters&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/papue/Documents/petprojects/CypherProgressBar/build/libs/CypherProgressBar-1.0.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,13 +90,16 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;teamcypher.cypherprogress.configuration.CypherProgressConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\papue\Documents\petprojects\CypherProgressBar\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\papue\Documents\petprojects\CypherProgressBar\src\main\resources\META-INF" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -237,10 +242,29 @@
       <workItem from="1698625165434" duration="406000" />
       <workItem from="1698625589098" duration="3797000" />
       <workItem from="1698629428951" duration="273000" />
+      <workItem from="1698629718366" duration="980000" />
+      <workItem from="1698706844426" duration="1024000" />
+      <workItem from="1698708443060" duration="364000" />
+      <workItem from="1698708826927" duration="2327000" />
+      <workItem from="1698711772958" duration="938000" />
+      <workItem from="1698712733809" duration="113000" />
     </task>
+    <task id="LOCAL-00001" summary="add new feat to get more characters">
+      <option name="closed" value="true" />
+      <created>1698629979433</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698629979433</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add new feat to get more characters" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new feat to get more characters" />
   </component>
 </project>
