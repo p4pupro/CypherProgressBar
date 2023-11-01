@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "teamcypher.cypherprogress"
-version = "1.0"
+version = "1.0.2"
 
 repositories {
   mavenCentral()
